@@ -38,6 +38,7 @@ Using tokio_stream::wrappers::ReceiverStream for streaming responses in Rust gRP
 <h3>Disdvantages</h3>
 - Complexity: Using ReceiverStream for streaming responses can introduce complexity to the codebase. It requires understanding asynchronous programming concepts and managing asynchronous tasks, which can be challenging for developers who are not familiar with asynchronous programming. It requires a good understanding of Rust's async/await syntax and tokio library.
 - Error Handling: ReceiverStream requires handling errors that can occur during streaming responses. This includes handling network errors, client disconnections, and other errors that can occur during streaming. Proper error handling is essential to ensure that the gRPC service is robust and reliable. It can be tricky to handle errors correctly in asynchronous code.
+  
 
 5. In what ways could the Rust gRPC code be structured to facilitate code reuse and modularity, promoting maintainability and extensibility over time?
 Answer:
@@ -83,6 +84,7 @@ The advantages and disadvantages of using HTTP/2, the underlying protocol for gR
 - Complexity: HTTP/2 is more complex than HTTP/1.1, which can make it more challenging to implement and debug. HTTP/2 introduces new features like multiplexing, header compression, and server push, which can require additional effort to understand and configure.
 - Compatibility: HTTP/2 may not be supported by all clients and servers, which can limit its adoption in some environments. HTTP/1.1 is more widely supported and compatible with existing infrastructure, making it easier to use for REST APIs that require broad compatibility.
 - WebSocket Support: HTTP/2 does not natively support bidirectional streaming like WebSocket, which can be a disadvantage for APIs that require real-time communication or long-lived connections. WebSocket can be a better choice for APIs that need bidirectional streaming or real-time updates.
+  
 
 9. How does the request-response model of REST APIs contrast with the bidirectional streaming capabilities of gRPC in terms of real-time communication and responsiveness?
 Answer:
