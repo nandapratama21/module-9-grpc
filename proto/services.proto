@@ -10,6 +10,7 @@ service TransactionService {
     rpc GetTransactionHistory(TransactionRequest) returns (stream TransactionResponse);
 }
 
+
 service ChatService {
     rpc Chat(stream ChatMessage) returns (stream ChatMessage);
 }
