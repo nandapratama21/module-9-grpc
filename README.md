@@ -30,12 +30,12 @@ Handling bidirectional streaming in Rust gRPC, especially in scenarios like chat
 Answer:
 Using tokio_stream::wrappers::ReceiverStream for streaming responses in Rust gRPC services has several advantages and disadvantages:
 
-# Advantages
+<h3>Advantages</h3>  
 - Asynchronous Streaming: ReceiverStream allows for asynchronous streaming of responses. This means that it can handle multiple responses concurrently, which can lead to improved performance and responsiveness in gRPC service.
 - Compatibility: ReceiverStream is compatible with tokio, which is a popular asynchronous runtime for Rust. This makes it easy to integrate ReceiverStream with other tokio-based libraries and tools.
 - Backpressure Handling: ReceiverStream provides backpressure handling, which allows the client to control the rate at which it receives responses from the server. This can prevent the client from being overwhelmed by a large number of responses.
 
-# Disadvantages
+<h3>Disdvantages</h3>
 - Complexity: Using ReceiverStream for streaming responses can introduce complexity to the codebase. It requires understanding asynchronous programming concepts and managing asynchronous tasks, which can be challenging for developers who are not familiar with asynchronous programming. It requires a good understanding of Rust's async/await syntax and tokio library.
 - Error Handling: ReceiverStream requires handling errors that can occur during streaming responses. This includes handling network errors, client disconnections, and other errors that can occur during streaming. Proper error handling is essential to ensure that the gRPC service is robust and reliable. It can be tricky to handle errors correctly in asynchronous code.
 
@@ -72,14 +72,14 @@ The impact of adopting gRPC as a communication protocol on the overall architect
 Answer:
 The advantages and disadvantages of using HTTP/2, the underlying protocol for gRPC, compared to HTTP/1.1 or HTTP/1.1 with WebSocket for REST APIs include the following:
 
-# Advantages
+<h3>Advantages</h3>
 - Multiplexing: HTTP/2 supports multiplexing, which allows multiple requests and responses to be sent and received concurrently over a single connection. This can improve performance and reduce latency compared to HTTP/1.1, which requires multiple connections for concurrent requests.
 - Header Compression: HTTP/2 uses header compression to reduce the size of request and response headers, which can reduce bandwidth usage and improve performance compared to HTTP/1.1. This can be particularly beneficial for APIs that have large headers or metadata.
 - Server Push: HTTP/2 supports server push, which allows the server to send additional resources to the client before the client requests them. This can improve performance by reducing the number of round trips required to load a web page or API response.
 - Binary Protocol: HTTP/2 is a binary protocol, which can be more efficient for serialization and deserialization compared to text-based protocols like HTTP/1.1. This can improve performance and reduce overhead for APIs that exchange large amounts of data.
 - Stream Prioritization: HTTP/2 supports stream prioritization, which allows clients and servers to prioritize certain requests over others. This can improve performance by ensuring that high-priority requests are processed more quickly than low-priority requests.
 
-# Disadvantages
+<h3>Disdvantages</h3>
 - Complexity: HTTP/2 is more complex than HTTP/1.1, which can make it more challenging to implement and debug. HTTP/2 introduces new features like multiplexing, header compression, and server push, which can require additional effort to understand and configure.
 - Compatibility: HTTP/2 may not be supported by all clients and servers, which can limit its adoption in some environments. HTTP/1.1 is more widely supported and compatible with existing infrastructure, making it easier to use for REST APIs that require broad compatibility.
 - WebSocket Support: HTTP/2 does not natively support bidirectional streaming like WebSocket, which can be a disadvantage for APIs that require real-time communication or long-lived connections. WebSocket can be a better choice for APIs that need bidirectional streaming or real-time updates.
